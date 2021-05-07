@@ -1,1 +1,3 @@
-module "build_git_version"
+module build_git_version
+
+go 1.16
