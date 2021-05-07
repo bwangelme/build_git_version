@@ -12,8 +12,8 @@ GoVersion=$(go version)
 GO_LDFLAGS="$GO_LDFLAGS -X ${REPO_PATH}/version.GitSHA=${GIT_SHA} -X '${REPO_PATH}/version.BuildTimeStamp=${BuildTimeStamp} UTC' -X '${REPO_PATH}/version.GoVersion=${GoVersion}'"
 
 build() {
-	out="bin"
-	if [[ -n "${BINDIR}" ]]; then out="${BINDIR}"; fi
+  out="bin"
+  if [[ -n "${BINDIR}" ]]; then out="${BINDIR}"; fi
 
   CGO_ENABLED=0 go build $GO_BUILD_FLAGS \
     -ldflags "$GO_LDFLAGS" \
